@@ -625,6 +625,18 @@ namespace AQATExtAdventures
                 }
                 Count++;
             }
+            if (playerHasDie == false)
+            {
+              Console.WriteLine("player has no die");
+            }
+            else if (playersInSameRoom == false)
+            {
+              Console.WriteLine(otherCharacterName + " is not here");
+            }
+            else if (otherCharacterHasDie == false)
+            {
+              Console.WriteLine(otherCharacterName + " has no die");
+            }
             return playerHasDie && playersInSameRoom && otherCharacterHasDie;
         }
 
@@ -761,7 +773,8 @@ namespace AQATExtAdventures
             {
                 if (thing.Location == Inventory)
                 {
-                    Console.WriteLine(thing.Name);
+                    Console.Write(thing.Name.PadRight(10));
+                    Console.WriteLine(" (" + thing.Description + ")");
                 }
             }
             Console.WriteLine();
